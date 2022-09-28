@@ -6,18 +6,22 @@ module.exports = {
             data: {
                 type: "pie",
                 columns: [
-                    ["happy",],
-                    ["sad",],
-                    ["angry",],
-                    ["blah",],
-                    ["content",],
+                    ["excited", data.excited],
+                    ["happy", data.happy],
+                    ["sad", data.sad],
+                    ["angry", data.angry],
+                    ["blah", data.blah],
+                    ["anxious", data.anxious],
+                    ["frustrated", data.frustrated],
                 ],
                 colors: {
+                    excited: "khaki",
                     happy: "lightgreen",
                     sad: "paleturquoise",
                     angry: "crimson",
                     blah: "slategray",
-                    content: "mediumpurple",
+                    anxious: "mediumpurple",
+                    frustrated: "tomato",
                 }
             }
         });
