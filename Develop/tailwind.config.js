@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./views/**/*.{html,js}'],
+  content: [],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'bg-section': "url('./public/imgs/background.png')",
+      }
+    },
   },
   plugins: [],
 }
