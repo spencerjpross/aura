@@ -4,14 +4,16 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 
+
 const sequelize = require('./config/connection');
 const SeqStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// potential to add helpers for handlebars here
-const hbs = exphbs.create({});
+// adds the functionality of helpers to handlebars engine
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
 
 // constructing session/cookie
 const sess = {
