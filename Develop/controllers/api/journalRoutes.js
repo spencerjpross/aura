@@ -1,19 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Journal, Mood } = require('../../models');
+const { User, Journal, Mood } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//GET all Journal Entries
-router.get('/', async (req, res) => {
-    try {
-        const journalData = await Journal.findAll({
-            include: [{}]
-        });
-        res.status(200).json(journalData);
-    } catch (err) {
-        res.status(500).json(err);
-    };
-});
+
 
 //GET a single Journal Entry
 router.get('/:id', async (req, res) => {
@@ -40,35 +30,40 @@ router.get('/:id', async (req, res) => {
           include: [
             [
               sequelize.literal(
-                `'(SELECT COUNTALL(*) FROM ${mood_name} AS mood WHERE mood.id = journal.id)'`
+                `'(SELECT (*) FROM journal WHERE journal.mood_id LEFT JOIN mood WHERE mood.id = journal.id)'`
               ),
-              `'${mood_name}Journals'`
+              `'${mood_name} Journals'`
             ]
           ]
         }
       });
   
-      if (!readerData) {
-        res.status(404).json({ message: 'No reader found with that id!' });
+      if (!moodData) {
+        res.status(404).json({ message: '' });
         return;
       }
   
-      res.status(200).json(readerData);
+      res.status(200).json(moodData);
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
 //CREATE a Journal entry
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
-        const journalData = await Journal.create(req.body);
-        res.status(200).json(journalData);
+      const createData = await Journal.create({
+        ...req.body,
+        user_id: req.session.user_id,
+      });
+  
+      res.status(200).json(createData);
     } catch (err) {
-        res.status(400).json(err);
-    };
-});
+      res.status(400).json(err);
+    }
+  });
 
+//UPdate a journal Entry
 router.put('/:id', withAuth, async (req, res) => {
     Journal.update(req.body, {
         where: {id: req.params.id},
@@ -77,6 +72,7 @@ router.put('/:id', withAuth, async (req, res) => {
     .catch((err) => res.status(500).json(err))
 })
 
+//DELETE Route for a journal entry
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const journalData = await Journal.destroy({

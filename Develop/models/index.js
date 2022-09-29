@@ -12,8 +12,8 @@ User.hasMany(Mood, {
     foreignKey: 'mood_id',
 });
 
-Mood.hasMany(Journal, {
-    foreignKey: 'journal_id',
+Mood.belongsTo(Journal, {
+    foreignKey: 'mood_id',
 });
 
 User.hasMany(Journal, {
