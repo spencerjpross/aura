@@ -10,16 +10,15 @@
     
 </head>
 <body class="bg-stone-200">
-    <div class="text-center w-screen">
-  
-        <marquee direction="down" width="350" height="70" behavior="alternate">
-  <marquee behavior="alternate" class="text-blue-500 text-4xl font-serif"> AURA </marquee>
-</marquee>
+<div class="">
+    <div class="text-center">
+     <marquee scrollamount="2" direction="down" width="400" height="85" behavior="alternate"><marquee behavior="alternate" class="text-blue-500 text-6xl font-serif"> AURA </marquee></marquee>
     </div>
-    <div class=" w-screen h-screen flex flex-row gap-8 px-5 py-5">
+
+    <div class=" w-screen h-screen flex flex-row gap-8 px-8 py-8 ">
        
         
-    <nav class="w-screen h-screen bg-black text-black text-2xl px-5 py-5  ">
+       <nav class="w-screen h-screen basis-1/4  text-black text-2xl ">
             <a href="" class=" btn bg-blue-500 hover:bg-blue-700 font-bold py-1 px-2 rounded">Home</a>
             <br>
             <br>
@@ -32,44 +31,41 @@
             <a href="" class=" btn bg-teal-500 hover:bg-teal-700 font-bold py-1 px-2 rounded">Entries</a>
             <br>
             <br>
-    </nav>
-    <div class="w-screen h-screen bg-indigo-400 text-center ">
-        <div class="">
-            <div class="flex flex item-center">
-            <div id="currentDate"></div>
-        
-            <div id="currentTime"> </div>
-            </div>
-            <div>
-            <h2>Current mood</h2>
-            <div>
-            <button class="btn hover:bg-yellow-300">&#128534;</button>
-            <button class="btn hover:bg-red-500">&#128544;</button>
-            <button class="btn  hover:bg-red-200">&#128531;</button>
-            <button class="btn  hover:bg-blue-300">&#128532;</button>
-            <button class="btn  hover:bg-gray-300">&#128528;</button>
-            <button class="btn  hover:bg-green-200">&#128524;</button>
-            <button class="btn  hover:bg-green-400">&#128513;</button>
-            <button class="btn  hover:bg-green-600">&#128541;</button>
-            </div>
-            </div>
-        
+       </nav>
+
+       <div class="w-screen h-screen  text-center flex items-center flex-col gap-y-10">
+            
+            <!-- <div class="w-4/5 flex flex-col  bg-red-400 py-20 px-10 gap-y-10"> -->
+                <div class="flex flex-row  ">
+                    <div class="text-2xl " id="currentDate"></div>
+                    <div class="text-2xl" id="currentTime"></div>
+                </div>
+                    <div class="text-4xl">
+                        <h2 class="box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 text-6xl">Current mood</h2>
+                        
+                        <button class="btn hover:bg-yellow-300">&#128534;</button>
+                        <button class="btn hover:bg-red-500">&#128544;</button>
+                        <button class="btn  hover:bg-red-200">&#128531;</button>
+                        <button class="btn  hover:bg-blue-300">&#128532;</button>
+                        <button class="btn  hover:bg-gray-300">&#128528;</button>
+                        <button class="btn  hover:bg-green-200">&#128524;</button>
+                        <button class="btn  hover:bg-green-400">&#128513;</button>
+                        <button class="btn  hover:bg-green-600">&#128541;</button>
+                    </div>
+                    <hr>
+                    <h1>Welcome to your Journal</h1>
+                    <hr>
+                    <h2>Dear,</h2>
+                    <textarea class="px-2 py-2" placeholder="Say something about yourself..."></textarea>
+                     <button id="save" class="bg-stone-50 hover:bg-stone-400 text-black font-bold py-2 px-5 rounded">Save</button>
+               
+            <!-- </div> -->
+           
+         
         </div>
-        <hr>
-            <h1>heading line</h1>
-        <hr>
-             <h2>Journal body:</h2>
-             <textarea class="px-2 py-2"
-             placeholder="Say something about yourself..."></textarea>
-             <br>
-             <br>
-             <button id="save" class="bg-stone-50 hover:bg-stone-400 text-black font-bold py-2 px-5 rounded">Save</button>
-             
-         
-         
-    </div>
     
     </div>
+</div>    
     <script src="./script.js"></script>
 </body>
 
