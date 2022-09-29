@@ -4,22 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Login</title>
-  <link rel="stylesheet" href="Develop/public/css/style.css">
+  <title>AURA Login</title>
+  <link rel="stylesheet" href="./dst/output.css">
 </head>
 
-<body>
-  <header class="color-blue display-flex justify-space-between align-center p-2">
-    <h1 class="color">
-      User Registry
+<body class="bg-green-300">
+  <header class="m-0 flex-wrap border-4 rounded-sm border-gray-500">
+    <h1 class="text-teal-700">
+      AURA
     </h1>
     {{#if logged_in}}
     <nav>
-      <button class="btn" id="logout">logout</button>
+      <button class="border-2 rounded border-gray-500">logout</button>
     </nav>
     {{/if}}
   </header>
-  <main class="container container-fluid mt-5">
+  <main>
     {{{ body }}}
   </main>
   <footer>
