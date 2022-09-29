@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "sequelize": "^6.23.2"
   }
 }
