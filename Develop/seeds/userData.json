@@ -2,16 +2,16 @@
     {
         "name": "Jane Doe",
         "email": "janedoe@test.net",
-        "password": "123456"
+        "password": "janedoe123"
     },
     {
         "name": "John Doe",
         "email": "johndoe@test.net",
-        "password": "123456"
+        "password": "johndoe123"
     },
     {
         "name": "Jack Doe",
         "email": "jackdoe@test.net",
-        "password": "123456"
+        "password": "jackdoe123"
     }
 ]
