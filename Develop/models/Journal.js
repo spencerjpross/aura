@@ -6,7 +6,7 @@ class Journal extends Model {}
 Journal.init (
     {
         id: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
@@ -24,14 +24,14 @@ Journal.init (
             allowNull: true,
         },
         user_id: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             refrences: {
                 model: 'user',
                 key: 'id',
             },
         },
         mood_id: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             refrences: {
                 model: 'mood',
                 key: 'id'
