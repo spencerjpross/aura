@@ -1,6 +1,7 @@
 const User = require('./User');
 const Journal = require('./Journal');
 const Mood = require('./Mood');
+const Suggestions = require('./Suggestions');
 
 
 Journal.belongsTo(User, {
@@ -20,8 +21,11 @@ User.hasMany(Journal, {
     foreignKey: 'journal_id',
 });
 
+
+
 module.exports = {
     User,
     Mood,
     Journal,
+    Suggestions,
 };
