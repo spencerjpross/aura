@@ -5,7 +5,7 @@ const sequelize = require('../config/connection');
  Suggestions.init(
      {
          id: {
-             type: DataTypes.INTERGER,
+             type: DataTypes.INTEGER,
              allowNull: false,
              primaryKey: true,
              autoIncrement: true,
@@ -15,7 +15,7 @@ const sequelize = require('../config/connection');
              allowNull: false,
          },
          mood_id: {
-             type: DataTypes.INTERGER,
+             type: DataTypes.INTEGER,
              refrences: {
                  model: 'mood',
                  key: 'id'

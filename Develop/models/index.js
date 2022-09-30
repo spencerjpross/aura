@@ -17,7 +17,7 @@ Mood.belongsTo(Journal, {
 });
 
 User.hasMany(Journal, {
-    foreignKey: 'user_id',
+    foreignKey: 'journal_id',
 });
 
 module.exports = {
