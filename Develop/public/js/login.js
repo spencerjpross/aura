@@ -1,5 +1,6 @@
 const loginFormHandler = async (event) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
   event.preventDefaut();
 
   const email = document.querySelector('#email-login').value.trim();
@@ -11,6 +12,8 @@ const loginFormHandler = async (event) => {
           body: JSON.stringify({ email, password }),
           headers: { 'Content-Type': 'application/json' },
 =======
+=======
+>>>>>>> dev
     event.preventDefault();
   
     const username = document.querySelector('#user-login').value.trim();
@@ -21,6 +24,9 @@ const loginFormHandler = async (event) => {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
+<<<<<<< HEAD
+>>>>>>> dev
+=======
 >>>>>>> dev
       });
 
