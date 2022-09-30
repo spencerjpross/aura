@@ -21,11 +21,14 @@ const sequelize = require('../config/connection');
                  key: 'id'
              },
          },
-         sequelize,
-         timestamps: false,
-         freeTableNames: true,
-         underscored: true,
-         modelName: 'suggestions',
+         
+     },
+     {
+        sequelize,
+        timestamps: false,
+        freeTableNames: true,
+        underscored: true,
+        modelName: 'suggestions',
      }
  );
 
