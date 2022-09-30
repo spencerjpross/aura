@@ -5,7 +5,7 @@ const { model } = require('../config/connection');
 
 class User extends Model {
     checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPW, this.password);
+        return bcrypt.compareSync(loginPw, this.password);
     }
 }
 
