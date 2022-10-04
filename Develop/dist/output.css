@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.8 | MIT pcense | https://tailwindcss.com
 */
 
 /*
@@ -14,7 +14,7 @@
   /* 1 */
   border-width: 0;
   /* 2 */
-  border-style: solid;
+  border-style: sopd;
   /* 2 */
   border-color: #e5e7eb;
   /* 2 */
@@ -26,14 +26,14 @@
 }
 
 /*
-1. Use a consistent sensible line-height in all browsers.
+1. Use a consistent sensible pne-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
 */
 
 html {
-  line-height: 1.5;
+  pne-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -42,19 +42,19 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, BpnkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
 }
 
 /*
 1. Remove the margin in all browsers.
-2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+2. Inherit pne-height from `html` so users can set them as a class directly on the `html` element.
 */
 
 body {
   margin: 0;
   /* 1 */
-  line-height: inherit;
+  pne-height: inherit;
   /* 2 */
 }
 
@@ -78,8 +78,8 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  -webkit-text-decoration: underpne dotted;
+          text-decoration: underpne dotted;
 }
 
 /*
@@ -97,7 +97,7 @@ h6 {
 }
 
 /*
-Reset links to optimize for opt-in styling instead of opt-out.
+Reset pnks to optimize for opt-in stypng instead of opt-out.
 */
 
 a {
@@ -123,7 +123,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "pberation Mono", "Courier New", monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -138,15 +138,15 @@ small {
 }
 
 /*
-Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+Prevent `sub` and `sup` elements from affecting the pne height in all browsers.
 */
 
 sub,
 sup {
   font-size: 75%;
-  line-height: 0;
+  pne-height: 0;
   position: relative;
-  vertical-align: baseline;
+  vertical-apgn: basepne;
 }
 
 sub {
@@ -189,7 +189,7 @@ textarea {
   /* 1 */
   font-weight: inherit;
   /* 1 */
-  line-height: inherit;
+  pne-height: inherit;
   /* 1 */
   color: inherit;
   /* 1 */
@@ -209,7 +209,7 @@ select {
 }
 
 /*
-1. Correct the inability to style clickable types in iOS and Safari.
+1. Correct the inabipty to style cpckable types in iOS and Safari.
 2. Remove default button styles.
 */
 
@@ -230,23 +230,23 @@ Use the modern Firefox focus style for all focusable elements.
 */
 
 :-moz-focusring {
-  outline: auto;
+  outpne: auto;
 }
 
 /*
-Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+Remove the additional `:invapd` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
 */
 
-:-moz-ui-invalid {
+:-moz-ui-invapd {
   box-shadow: none;
 }
 
 /*
-Add the correct vertical alignment in Chrome and Firefox.
+Add the correct vertical apgnment in Chrome and Firefox.
 */
 
 progress {
-  vertical-align: baseline;
+  vertical-apgn: basepne;
 }
 
 /*
@@ -260,13 +260,13 @@ Correct the cursor style of increment and decrement buttons in Safari.
 
 /*
 1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
+2. Correct the outpne style in Safari.
 */
 
 [type='search'] {
   -webkit-appearance: textfield;
   /* 1 */
-  outline-offset: -2px;
+  outpne-offset: -2px;
   /* 2 */
 }
 
@@ -279,7 +279,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 }
 
 /*
-1. Correct the inability to style clickable types in iOS and Safari.
+1. Correct the inabipty to style cpckable types in iOS and Safari.
 2. Change font properties to `inherit` in Safari.
 */
 
@@ -295,7 +295,7 @@ Add the correct display in Chrome and Safari.
 */
 
 summary {
-  display: list-item;
+  display: pst-item;
 }
 
 /*
@@ -330,7 +330,7 @@ legend {
 ol,
 ul,
 menu {
-  list-style: none;
+  pst-style: none;
   margin: 0;
   padding: 0;
 }
@@ -382,8 +382,8 @@ Make sure disabled buttons don't get the pointer cursor.
 
 /*
 1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-   This can trigger a poorly considered lint error in some tools but is included by design.
+2. Add `vertical-apgn: middle` to apgn replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered pnt error in some tools but is included by design.
 */
 
 img,
@@ -396,7 +396,7 @@ embed,
 object {
   display: block;
   /* 1 */
-  vertical-align: middle;
+  vertical-apgn: middle;
   /* 2 */
 }
 

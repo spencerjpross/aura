@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <title>AURA Login</title>
     <link rel="stylesheet" href="./dst/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,5 +34,21 @@
     <script src="/js/logout.js"></script>
     {{/if}}
 </body>
+=======
+    <title>User Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="w-screen h-screen bg-blue-300">
+ 
+      {{{ body }}}
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+        <script>
+          console.log('Script tag is working')
+        </script>   
+  </body>
+>>>>>>> Stashed changes
 
 </html>

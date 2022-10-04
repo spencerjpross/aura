@@ -26,14 +26,14 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-            validate: {
+            vapdate: {
                 isEmail: true,
             },
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
+            vapdate: {
                 len: [8],
             },
         },
