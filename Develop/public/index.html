@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</head>
+<body class="bg-sky-200">
+    <nav class="p-5 translate-y-0 bg-white shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+            <span class="text-4xl font-[Poppins] cursor-pointer">
+                <img class="h-12 inline " src="./img/aura-yoga-vector-17700032.jpeg">
+                Aura
+            </span>
+
+            <span class="text-3-x1 cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+
+    <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 
+    md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-4 my-6 md:my-0">
+            <a href="" class="text-xl hover:font-bold hover:text-indigo-600 duration-500"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+            <a href="" class="text-xl hover:font-bold hover:text-blue-500 duration-500"><ion-icon name="happy-outline"></ion-icon>Moods</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+            <a href="" class="text-xl hover:font-bold hover:text-sky-400 duration-500"><ion-icon name="calendar-outline"></ion-icon>Calender</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+            <a href="" class="text-xl hover:font-bold hover:text-cyan-400 duration-500"><ion-icon name="document-text-outline"></ion-icon>Entries</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="flex items-center justify-around text-lg">
+    <div id="currentDate" ></div>
+    <div id="currentTime"></div>
+</div>
+
+<!-- <div class="text-4xl flex flex-col justify-between items-center"> -->
+    <!-- <div class="flex flex-col items-center"> -->
+    <div class="w-screen h-3/4 flex flex-col justify-center items-center gap-8 ">
+        <div class="w-full md:w-3/4 flex flex-col justify-center items-center gap-4">
+                <h2 class="text-2xl md:text-6xl">Current mood</h2>
+           
+            <ul class="text-4xl flex justify-around gap-4 md:gap-8">
+                <li>
+                <a href="" class="hover:bg-yeloow-300">&#128534;</a> 
+                </li>
+                <li>
+                    <a href="" class="hover:bg-">&#128544;</a> 
+                </li>
+                <li>
+                    <a href="" class="hover:bg-">&#128531;</a> 
+                </li>
+                <li>
+                    <a href="" class="hover:bg-">&#128532;</a> 
+                </li>
+                <li>
+                    <a href="" class="hover:bg-">&#128528;</a> 
+                </li>
+                <li>
+                    <a href="" class="hover:bg-">&#128524;</a> 
+                </li>
+                <li>
+                    <a href="" class="hover:bg-">&#128513;</a> 
+                </li>
+            </ul>
+        
+
+            <div class="w-screen flex justify-center items-center ">
+                <form class="w-full md:w-3/4 flex flex-col">
+                    
+                    <div class="flex flex-col justify-center items-center">
+                    <label class="py-4 px-8 text-3xl" for="story" >Journal:</label>
+                    <textarea class="w-11/12 md:w-3/4 h-1/2 rounded border-2 border-solid border-gray-300 font-[Poppins]" rows="10" placeholder="Write something about yourself here..."></textarea>
+                    </div>
+                    <br/>
+                    <div class="flex justify-center">
+                    <button class="w-48 h-12 rounded-xl shadow-lg shadow-gray-400 hover:font-bold font-[Poppins] py-1 px-2 cursor-pointer bg-white rounded">Save entry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+  </div>
+
+
+    <script src="./js/script.js">
+        
+    </script>
+</body>
+</html>
