@@ -36,17 +36,14 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    console.log(name, email, password)
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
   }
 };
 
-  const loginBtn = document.querySelector('.login-form');
-  loginBtn.addEventListener('click', loginFormHandler);
-
-  const signUpBtn = document.querySelector('.signup-form');
-  signUpBtn.addEventListener('click', signupFormHandler);
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
