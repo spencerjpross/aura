@@ -1,9 +1,15 @@
 const router = require('express').Router();
-
+const homepageRoute = require('./homepageRoute');
 const apiRoutes = require('./api')
-const homeRoutes = require('./homeRoutes');
-
-router.use('/', homeRoutes);
+// const app = express();
+router.use('/', homepageRoute);
 router.use('/api', apiRoutes)
 
-module.exports = router;
+
+// Default route for any other url's
+// app.get("*", (req, res) => {
+//     res.send("PAGE NOT FOUND");
+//   });
+
+
+  module.exports = router;

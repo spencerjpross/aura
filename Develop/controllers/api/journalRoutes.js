@@ -53,7 +53,7 @@ router.get('/:id', async (req, res) => {
   });
 
 //CREATE a Journal entry
-router.post('/', withAuth, async (req, res) => {
+router.post('/new', withAuth, async (req, res) => {
     try {
       const createData = await Journal.create({
         ...req.body,
