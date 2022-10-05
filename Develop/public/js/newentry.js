@@ -18,7 +18,7 @@ async function postJournal(e) {
     });
 
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/homepage');
     } else {
         console.log('err');
         alert('Failed to submit Journal!');
