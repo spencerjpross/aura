@@ -17,9 +17,6 @@
     "url": "https://github.com/spencerjpross/aura/issues"
   },
   "homepage": "https://github.com/spencerjpross/aura#readme",
-  "devDependencies": {
-    "tailwindcss": "^3.1.8"
-  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.5",

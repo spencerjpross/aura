@@ -1,10 +1,83 @@
-{{#each users as |user| }}
-<div class="block text-sm font-medium text-gray-700">
-  <div class="text-lg font-medium leading-6 text-gray-900">
-    <h2>{{user.name}}</h2>
-  </div>
-  <div>
-    
-  </div>
-</div>
-{{/each}}
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<link href="https://pagecdn.io/lib/billboardjs/3.5.1/billboard.css" rel="stylesheet" crossorigin="anonymous"  >
+<script src="https://pagecdn.io/lib/billboardjs/3.5.1/billboard.js" crossorigin="anonymous"  ></script>
+
+<content class="flex flex-wrap h-full">
+
+    <aside class="min-w-max ml-8">       
+        <div class="px-8 flex h-full flex-col bg-gray-300 items-center space-y-14">
+             
+            <div id="user-pic" class="w-40 border-8 mt-8">
+            <img src="icon.png" alt="Profile Picture">
+            </div>
+
+            <div id="items" class="text-4xl space-y-24">
+
+                {{!-- displays username in side bar --}}
+                <div>
+                    <p>{{name}}</p>
+                </div>
+                  
+                {{!-- Sidebar buttons --}}
+                <div id="new-entry">
+                    <button class="p-2 border border-black"><i class='fa fa-plus mr-2'></i>New Entry</button>
+                </div>
+
+                <div id="past-entries">
+                    <button class="p-2 border border-black"><i class='fa fa-book mr-2'></i>Past Entries</button>
+                </div>
+
+                <div id="user-settings">
+                    <button class="p-2 border border-black mx-8"><i class='fa fa-gear mr-2'></i>User Settings</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    {{!-- empty div created to place the pie chart in --}}
+    <section id="chart-container" class="flex-grow flex flex-col items-center justify-center">
+        <div id="chart"></div>
+    </section>
+
+    {{!-- box to place the user's last journal entry in --}}
+    <section id="box-container" class="flex h-full flex-grow flex-col space-y-20 mr-8 items-center">
+        <div class="border border-black h-56 w-56 space-y-12">
+            <h1 class="text-2xl mt-4">Your last journal entry</h1>
+            <p class="text-xl">{{journal.[journal.length].topic}}</p>
+        </div>
+
+        {{!-- box created to hold the generated mood calendar --}}
+        <div class="h-56 w-56 space-y-2 border-r-2 border-l-2 border-t-2 border-black">
+            <h2 class="mt-2">Monthly Mood Calendar</h2>
+
+            {{!-- calendar labels --}}
+            <div id="weekdays" class="flex text-xs justify-between">
+                <div class="mx-0.5">Sun</div>
+                <div class="mx-0.5">Mon</div>
+                <div class="mx-0.5">Tue</div>
+                <div class="mx-0.5">Wed</div>
+                <div class="mx-0.5">Thu</div>
+                <div class="mx-0.5">Fri</div>
+                <div class="mx-2">Sat</div>
+            </div>
+            <div id="calendar" class="grid grid-cols-7 h-40 grid-rows-5 border-b-2 border-t border-black"></div>
+        </div>
+
+        {{!-- badge box to present the user their most recent badge and also click to
+              see their total badges (not implemented) --}}
+        <button id="badge-button">
+        <div class="flex flex-col border border-black h-56 w-56 items-center">
+            <h3 class="text-2xl mt-4">Badges</h3>
+            <p class="mt-2">Your most recent badge is..</p>
+            <img class="h-24 w-24" src="badge-example.png" alt="Recent Example Badge">
+            <p>for logging 7 days of consecutive entries</p>
+        </div>
+    </button>
+    </section>
+
+</content>
+
+{{!-- calls the helper functions to generate the pie chart and mood calendar --}}
+{{{gen_chart user}}}
+{{{gen_calendar journal}}}
