@@ -1,23 +1,22 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const app = express();
 const withAuth = require('../utils/auth');
-const { User, Journal, Mood } = require('../models');
-const { moveMessagePortToContext } = require('worker_threads');
+const { User } = require('../models');
 
 
 router.get('/', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-        res.redirect('/dashboard');
+    if (!req.session.logged_in) {
+        res.render('login');
         return;
-    }
+    } 
 
-    res.render('login');
+    res.render('homepage');
+   
+    // // If the user is already logged in, redirect the request to another route
+   
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/homepage', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
@@ -27,7 +26,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
         const user = userData.get({ plain: true });
 
-        res.render('dashboard', {
+        res.render('homepage', {
             ...user,
             logged_in: true
         });
@@ -56,65 +55,67 @@ router.get('/alljournals', withAuth, async (req, res) => {
     }
 });
 
-//GET route to pull all journal entries and moods for the last week
-router.get('/lastweek', withAuth, async (req, res) => {
-    try {
-        // Find the logged in user based on the session ID
-        const userData = await User.findByPk(req.session.user_id, {
-            where: {
-                start_datetime: {
-                    $gte: moment().subtract(7, 'days').toDate()
-                }
-            },
-            attributes: { exclude: ['password'] },
-            include: [{ model: Journal, model: Mood }],
-        });
+// //GET route to pull all journal entries and moods for the last week
+// router.get('/lastweek', withAuth, async (req, res) => {
+//     try {
+//         // Find the logged in user based on the session ID
+//         const userData = await User.findByPk(req.session.user_id, {
+//             where: {
+//                 start_datetime: {
+//                     $gte: moment().subtract(7, 'days').toDate()
+//                 }
+//             },
+//             attributes: { exclude: ['password'] },
+//             include: [{ model: Journal, model: Mood }],
+//         });
 
-        const user = userData.get({ plain: true });
-        console.log(user)
+//         const user = userData.get({ plain: true });
+//         console.log(user)
 
-        res.render('lastWeek', {
-            ...user,
-            logged_in: true
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+//         res.render('lastWeek', {
+//             ...user,
+//             logged_in: true
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
-//GET route to pull all journal entries and moods for the last month
-router.get('/lastmonth', withAuth, async (req, res) => {
-    try {
-        // Find the logged in user based on the session ID
-        const userData = await User.findByPk(req.session.user_id, {
-            where: {
-                start_datetime: {
-                    $gte: moment().subtract(30, 'days').toDate()
-                }
-            },
-            attributes: { exclude: ['password'] },
-            include: [{ model: Journal, model: Mood }],
-        });
+// //GET route to pull all journal entries and moods for the last month
+// router.get('/lastmonth', withAuth, async (req, res) => {
+//     try {
+//         // Find the logged in user based on the session ID
+//         const userData = await User.findByPk(req.session.user_id, {
+//             where: {
+//                 start_datetime: {
+//                     $gte: moment().subtract(30, 'days').toDate()
+//                 }
+//             },
+//             attributes: { exclude: ['password'] },
+//             include: [{ model: Journal, model: Mood }],
+//         });
 
-        const user = userData.get({ plain: true });
-        console.log(user)
+//         const user = userData.get({ plain: true });
+//         console.log(user)
 
-        res.render('lastMonth', {
-            ...user,
-            logged_in: true
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+//         res.render('lastMonth', {
+//             ...user,
+//             logged_in: true
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
-// GET route for new entry
-router.get('/', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-        res.redirect('/new');
-        return;
-    }
+// // GET route for new entry
+// router.get('/', (req, res) => {
+//     // If the user is already logged in, redirect the request to another route
+//     if (req.session.logged_in) {
+//         res.redirect('/newEntry');
+//         return;
+//     }
 
-    res.render('newEntry');
-});
+//     res.render('new');
+// });
+
+module.exports = router;
