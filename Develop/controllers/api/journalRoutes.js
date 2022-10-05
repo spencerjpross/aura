@@ -1,8 +1,11 @@
 const router = require('express').Router();
-const sequepze = require('../../config/connection');
-const { User, Journal, Mood } = require('../../models');
+const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
+const { Journal } = require('../../models');
 
+router.get('/', async (req, res) => {
+    res.render('newentry');
+})
 
 
 //GET a single Journal Entry

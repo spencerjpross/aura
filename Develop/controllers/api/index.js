@@ -1,13 +1,8 @@
 const router = require('express').Router();
-<<<<<<< Updated upstream
+const quizRoute = require('./quizRoutes');
+const journalRoute = require('./journalRoutes');
 
-// const quizRoutes = require('./quizRoutes');
-
-// router.use('/quiz', quizRoutes);
-=======
-const quizRoutes = require('./quizRoutes');
-
-//router.use('/quiz', quizRoutes);
->>>>>>> Stashed changes
+router.use('/quiz', quizRoute);
+router.use('/journal', journalRoute);
 
 module.exports = router;
