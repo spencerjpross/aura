@@ -14,6 +14,7 @@ Journal.init (
         date: {
             type: DataTypes.DATEONLY,
             allowNull: false,
+            defaultValue: DataTypes.NOW,
         },
         notes: {
             type: DataTypes.TEXT,
@@ -22,22 +23,21 @@ Journal.init (
         topic: {
             type: DataTypes.TEXT,
             allowNull: true,
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            refrences: {
-                model: 'user',
-                key: 'id',
-            },
-        },
+        },       
         mood_id: {
             type: DataTypes.INTEGER,
-            refrences: {
+            references: {
                 model: 'mood',
                 key: 'id'
             },
         },
-        
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
