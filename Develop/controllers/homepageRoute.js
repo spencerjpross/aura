@@ -107,15 +107,15 @@ router.get('/alljournals', withAuth, async (req, res) => {
 //     }
 // });
 
-// // GET route for new entry
-// router.get('/', (req, res) => {
-//     // If the user is already logged in, redirect the request to another route
-//     if (req.session.logged_in) {
-//         res.redirect('/newEntry');
-//         return;
-//     }
+// GET route for new entry
+router.get('/new', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (!req.session.logged_in) {
+        res.render('login');
+        return;
+    } 
 
-//     res.render('new');
-// });
+    res.render('newentry');
+});
 
 module.exports = router;
