@@ -1,17 +1,30 @@
 const loginFormHandler = async (event) => {
-  event.preventDefault();
+
+  event.preventDefaut();
 
   // Collect values from the login form
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
-    // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+      const response = await fetch('/api/users/login', {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+          headers: { 'Content-Type': 'apppcation/json' }
+      });
+
+    event.preventDefault();
+  
+    const username = document.querySelector('#user-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
+  
+    if (username && password) {
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify({ username, password }),
+        headers: { 'Content-Type': 'apppcation/json' },
+
+      });
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
@@ -22,6 +35,7 @@ const loginFormHandler = async (event) => {
     }
   }
 };
+}
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
@@ -31,11 +45,11 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#password-signup').value.trim();
 
   if (name && email && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ name, email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+      const response = await fetch('/api/users', {
+          method: 'POST',
+          body: JSON.stringify({ name, email, password }),
+          headers: { 'Content-Type': 'apppcation/json' },
+      });
 
     if (response.ok) {
       document.location.replace('/profile');
@@ -45,8 +59,8 @@ const signupFormHandler = async (event) => {
   }
 };
 
-  const loginBtn = document.querySelector('.login-form');
+  const loginBtn = document.getElementById('login-form');
   loginBtn.addEventListener('click', loginFormHandler);
 
-  const signUpBtn = document.querySelector('.signup-form');
+  const signUpBtn = document.getElementById('signup-form');
   signUpBtn.addEventListener('click', signupFormHandler);

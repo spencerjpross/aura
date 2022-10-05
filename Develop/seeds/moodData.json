@@ -1,37 +1,23 @@
 [
     {
-        "mood_name": "Excited",
-        "description": "",
-        "emoji": ""
+        "mood_name": "Excited"
     },
     {
-        "mood_name": "Happy",
-        "description": "",
-        "emoji": ""
+        "mood_name": "Happy"
     },
     {
-        "mood_name": "Anxious",
-        "description": "",
-        "emoji": ""
+        "mood_name": "Anxious"
     },
     {
-        "mood_name": "Blah",
-        "description": "",
-        "emoji": ""
+        "mood_name": "Blah"
     },
     {
-        "mood_name": "Sad",
-        "description": "",
-        "emoji": ""
+        "mood_name": "Sad"
     },
     {
-        "mood_name": "Fustrated",
-        "description": "",
-        "emoji": ""
+        "mood_name": "Frustrated"
     },
     {
-        "mood_name": "Angry",
-        "description": "",
-        "emoji": ""
+        "mood_name": "Angry"
     }
 ]

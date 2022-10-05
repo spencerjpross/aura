@@ -23,7 +23,6 @@ User.hasMany(Mood, {
     onDelete: 'CASCADE'
 });
 
-
 module.exports = {
     User,
     Mood,

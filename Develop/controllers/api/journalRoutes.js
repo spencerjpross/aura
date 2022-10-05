@@ -1,15 +1,13 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { User, Journal, Mood } = require('../../models');
 const withAuth = require('../../utils/auth');
-
-
+const { Journal } = require('../../models');
 
 //GET a single Journal Entry
 router.get('/:id', async (req, res) => {
     try {
         const journalData = await Journal.findByPk(req.params.id, {
-            include: [{}]
+            
         });
         if (!journalData) {
             res.status(404).json({ message: 'No journal entry found.'});
@@ -21,40 +19,40 @@ router.get('/:id', async (req, res) => {
     };
 });
 
-//GET specific journals related to a mood from the pie chart.
-router.get('/:id', async (req, res) => {
-    try {
-      const moodData = await Mood.findByPk(req.params.id, {
-        include: [{ model: Journal }],
-        attributes: {
-          include: [
-            [
-              sequelize.literal(
-                `'(SELECT (*) FROM journal WHERE journal.mood_id LEFT JOIN mood WHERE mood.id = journal.id)'`
-              ),
-              `'${mood_name} Journals'`
-            ]
-          ]
-        }
-      });
+// //GET specific journals related to a mood from the pie chart.
+// router.get('/:id', async (req, res) => {
+//     try {
+//       const moodData = await Mood.findByPk(req.params.id, {
+//         include: [{ model: Journal }],
+//         attributes: {
+//           include: [
+//             [
+//               sequelize.literal(
+//                 `'(SELECT (*) FROM journal WHERE journal.mood_id LEFT JOIN mood WHERE mood.id = journal.id)'`
+//               ),
+//               `'${mood_name} Journals'`
+//             ]
+//           ]
+//         }
+//       });
   
-      if (!moodData) {
-        res.status(404).json({ message: '' });
-        return;
-      }
+//       if (!moodData) {
+//         res.status(404).json({ message: '' });
+//         return;
+//       }
   
-      res.status(200).json(moodData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+//       res.status(200).json(moodData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 //CREATE a Journal entry
-router.post('/new', withAuth, async (req, res) => {
+router.post('/new', async (req, res) => {
     try {
       const createData = await Journal.create({
         ...req.body,
-        user_id: req.session.user_id,
+        user_id: 1, //req.session.user_id,
       });
   
       res.status(200).json(createData);
