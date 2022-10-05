@@ -1,32 +1,52 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-const { Journal, Mood } = require('../models');
+const { Journal,Mood, User } = require('../models');
+const { UserContextMenuCommandInteraction } = require('discord.js');
 
 router.get('/', async (req, res) => {
-    try {
         const journalData = await Journal.findAll({
+            where: { user_id: req.session.user_id },
             order: [['date', 'DESC']],
-            // include: [{ model: Mood }],
-            // attributes: {
-            //     include: [
-            //         [
-            //             sequelize.literal(
-            //                 `(SELECT mood_name FROM mood WHERE journal.mood.id = mood.id)`,
-            //             ),
-            //         ],
-            //     ],
-            // },
         });
 
         const journals = journalData.map((journal) => journal.get({ plain: true }));
 
+        console.log(journals);
+
         res.render('entries', {
             journals
         })
-    } catch (err) {
-        res.status(500).json(err);
-    }
+
+        console.log(req.session.logged_in);
 })
+
+router.get('/week', async (req, res) => {
+   const journalData = await Journal.findAll({
+        where: { user_id: req.seesion.user_id },
+        limit: 7,
+        order: [['date', 'DESC'],]
+   })
+
+   const journals = journalData.map((journal) => journal.get({ plain: true }));
+
+   res.render('entries', {
+        journals
+   })
+})
+
+router.get('/month', async (req, res) => {
+    const journalData = await Journal.findAll({
+         where: { user_id: req.seesion.user_id },
+         limit: 30,
+         order: [['date', 'DESC'],]
+    })
+ 
+    const journals = journalData.map((journal) => journal.get({ plain: true }));
+ 
+    res.render('entries', {
+         journals
+    })
+ })
 
 module.exports = router;

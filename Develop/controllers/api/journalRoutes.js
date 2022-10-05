@@ -52,7 +52,7 @@ router.post('/new', async (req, res) => {
     try {
       const createData = await Journal.create({
         ...req.body,
-        user_id: 1, //req.session.user_id,
+        user_id: req.session.user_id,
       });
   
       res.status(200).json(createData);

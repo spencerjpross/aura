@@ -13,3 +13,19 @@ async function journalPost(e){
         alert('Something went wrong!');
     }
 };
+
+async function backHome(e){
+    e.preventDefault();
+
+    const response = await fetch(`/`, {
+        method: 'GET'
+    });
+
+    if (response.ok) {
+        document.location.replace(`/homepage`);
+    } else {
+        alert('Something went wrong!');
+    }
+};
+
+document.querySelector('#backHome').addEventListener('click', backHome);
