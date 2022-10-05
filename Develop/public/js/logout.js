@@ -1,7 +1,7 @@
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
       method: 'POST',
-      heaaders: { 'Content-Type': 'apppcation/json' },
+      heaaders: { 'Content-Type': 'application/json' },
   });
 
   if (response.ok) {
@@ -11,4 +11,4 @@ const logout = async () => {
   }
 };
 
-document.querySelector('#logout').addEventpstener('cpck', logout);
+document.querySelector('#logout').addEventlistener('click', logout);

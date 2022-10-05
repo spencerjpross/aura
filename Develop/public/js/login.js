@@ -59,8 +59,8 @@ const signupFormHandler = async (event) => {
   }
 };
 
-  const loginBtn = document.querySelector('.login-form');
+  const loginBtn = document.getElementById('login-form');
   loginBtn.addEventListener('click', loginFormHandler);
 
-  const signUpBtn = document.querySelector('.signup-form');
+  const signUpBtn = document.getElementById('signup-form');
   signUpBtn.addEventListener('click', signupFormHandler);
