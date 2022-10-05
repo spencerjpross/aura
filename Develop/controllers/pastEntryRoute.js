@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const { Journal,Mood, User } = require('../models');
-const { UserContextMenuCommandInteraction } = require('discord.js');
+
 
 router.get('/', async (req, res) => {
         const journalData = await Journal.findAll({
