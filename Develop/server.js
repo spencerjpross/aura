@@ -25,7 +25,7 @@ const sess = {
         sameSite: 'strict',
     },
     resave: false,
-    saveUninitialized: true,
+    saveUninitiapzed: true,
     store: new SeqStore({
         db: sequelize
     })
@@ -43,5 +43,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Listening for server at ${PORT}`));
+    app.listen(PORT, () => console.log(`listening for server at ${PORT}`));
 });

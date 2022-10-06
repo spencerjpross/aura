@@ -21,13 +21,13 @@
     </ul>
 </nav>
 
-<content class="flex flex-wrap h-full block">
+<content class="flex flex-wrap h-full block space-y-12 justify-center md:space-y-0 md:justify-start">
 
-    <aside class="min-w-max ml-8">       
+    <aside class="min-w-max ml-8 flex-grow order-first">       
         <div class="px-8 flex h-full flex-col bg-gray-100 bg-opacity-30 border-2 border-black items-center text-center space-y-16">
              
             <div id="user-pic" class="w-40 border-4 border-black mt-8">
-            <img src="/imgs/icon.png" alt="Profile Picture">
+            <img src="/img/icon.png" alt="Profile Picture">
             </div>
 
             <div id="items" class="text-3xl space-y-12 flex-col flex">
@@ -59,15 +59,15 @@
     </aside>
 
     {{!-- empty div created to place the pie chart in --}}
-    <section id="chart-container" class="flex-grow flex flex-col items-center justify-center">
+    <section id="chart-container" class="flex-grow flex flex-col items-center justify-center order-last md:order-2">
         <div id="chart"></div>
     </section>
 
     {{!-- box to place the user's last journal entry in --}}
-    <section id="box-container" class="flex h-full flex-grow flex-col space-y-20 mr-8 justify-center items-center">
-        <div class="border border-black h-56 w-56 space-y-12 bg-gray-100 bg-opacity-30">
+    <section id="box-container" class="flex h-full flex-grow flex-col space-y-20 mr-8 justify-center items-center order-3">
+        <div class="border border-black h-56 w-56 space-y-12 bg-gray-100 bg-opacity-30 text-center">
             <h1 class="text-2xl mt-4">Your last journal entry</h1>
-            <p class="text-xl">{{user.journals.[1].topic}}</p>
+            <p class="text-xl">{{user.journals.[2].topic}}</p>
         </div>
 
         {{!-- box created to hold the generated mood calendar --}}
@@ -93,7 +93,7 @@
         <div class="flex flex-col border border-black h-56 w-56 items-center hover:opacity-80 bg-gray-100 bg-opacity-30">
             <h3 class="text-2xl mt-4">Badges</h3>
             <p class="mt-2">Your most recent badge is..</p>
-            <img class="h-24 w-24" src="/imgs/badge-example.png" alt="Recent Example Badge">
+            <img class="h-24 w-24" src="/img/badge-example.png" alt="Recent Example Badge">
             <p>for logging 7 days of consecutive entries</p>
         </div>
     </button>
@@ -101,4 +101,4 @@
 
 </content>
 
-<script src="./js/helpers.js"></script>
+<script src="./js/homepage.js"></script>

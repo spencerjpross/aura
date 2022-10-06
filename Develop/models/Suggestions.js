@@ -16,7 +16,7 @@ const sequelize = require('../config/connection');
          },
          mood_id: {
              type: DataTypes.INTEGER,
-             refrences: {
+             references: {
                  model: 'mood',
                  key: 'id'
              },
