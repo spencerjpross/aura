@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { User, Journal, Mood } = require('../models');
+const sequelize = require('../config/connection');
 
 
 
@@ -18,15 +19,15 @@ router.get('/homepage', withAuth, async (req, res) => {
     try {
         //Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-
+            include: [{ model: Journal }],
+            attributes: { exclude: ['password'] }
         });
-
         const user = userData.get({ plain: true });
-        console.log(`User is logged in by:${req.session.id}`);
+
         res.render('homepage', {
             user,
         });
+
     } catch (err) {
         res.status(500).json(err);
     }

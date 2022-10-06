@@ -1,12 +1,31 @@
-<button id="backHome" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Homepage</button>
 
-    {{#if logged_in}}
-      <h1 class="text-2xl">You are logged in!</h1>>
-    {{/if}}
+    <nav class="fixed w-screen py-4 translate-y-0 bg-white shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+            <span class="text-4xl font-[Poppins] cursor-pointer" id="homebtn">
+                <img class="h-12 inline " src="/img/aura-yoga-vector-17700032.jpeg">
+                Aura
+            </span>
 
-<div class="w-screen h-screen flex flex-col items-center overflow-y-auto py-8 gap-8">
+            <span class="text-3-x1 cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
 
+    <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 
+    md:pl-0 pl-5 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-4 my-6 md:my-0">
+            <a href="" class="text-xl hover:font-bold hover:text-indigo-600 duration-500"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+            <a href="" class="text-xl hover:font-bold hover:text-sky-400 duration-500"><ion-icon name="calendar-outline"></ion-icon>Calender</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+            <a href="" class="text-xl hover:font-bold hover:text-cyan-400 duration-500"><ion-icon name="document-text-outline"></ion-icon>Entries</a>
+        </li>
+    </ul>
+</nav>
 
+<div class="w-full h-full flex flex-col items-center overflow-y-auto py-24 gap-8">
 
     {{#each journals as |journal| }}
     <div id="{{ journal.id }}" class="w-screen md:w-3/4 h-auto flex flex-col justify-center items-center bg-gray-200 border-b-2 border-r-2 border-black rounded-lg shadow-xl shadow-gray-500 py-4 px-4 gap-4 hover:scale-110">
