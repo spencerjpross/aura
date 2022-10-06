@@ -56,3 +56,5 @@ document.querySelector('#create-entry').addEventListener('click', createNewEntry
 document.querySelector('#all-entries').addEventListener('click', viewAllEntries);
 document.querySelector('#past-week').addEventListener('click', pastWeekEntries);
 document.querySelector('#past-month').addEventListener('click', pastMonthEntries);
+
+console.log('hello world')
