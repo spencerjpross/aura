@@ -1,40 +1,55 @@
-<div class="md:grid md:grid-cols-2 md:gap-6">  
-            <div class="md:col-span-1 pr-5 "> 
-              <h2>Log In</h2>
+ <nav class="p-5 translate-y-0 bg-white shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+            <span class="text-4xl font-[Poppins] cursor-pointer">
+                <img class="h-12 inline " src="./img/aura-yoga-vector-17700032.jpeg">
+                Aura
+            </span>
+
+           
+        </div>
+
+    
+    </nav>
+    <div class=" h-screen flex flex-row justify-center items-center">
+        <div class=" flex gap-28"> 
             
-              <form>
-                <div class="md:col-span-1">
-                  <label for="user-login" class="block text-sm font-medium text-gray-700">Username:</label>
-                  <input class="form-input" type="text" id="user-login" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Username" />
+                      
+            <form class="login-form ">
+                <h2>Login</h2>
+                <div class="">
+                <label for="user-login" class="block text-sm font-medium text-gray-700">Username:</label>
+                <input class="form-input" type="text" id="email-login" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Username" />
                 </div>
                 <div class="md:col-span-1">
-                  <label for="password-login" class="mt-2 block text-sm font-medium text-gray-700">Password:</label>
-                  <input class="form-input" type="password" id="password-login" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Password"/>
+                <label for="password-login" class="mt-2 block text-sm font-medium text-gray-700">Password:</label>
+                <input class="form-input" type="password" id="password-login" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Password"/>
                 </div>
                 <div class="md:col-span-1">
-                  <button type="button" class="mt-5 rounded-md border border-gray-300 bg-white py-2 px-3 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">login</button>
+                <button type="button" class="mt-5 rounded-md border border-gray-300 bg-white py-2 px-3 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">login</button>
                 </div>
-              </form>
-            </div> 
-            <div class="md:col-span-1 pl-5">    
-              <h2>Need an Account?</h2>
+            </form>
             
-              <form>
-                <div class="md:col-span-1">
-                  <label for="user-signup" class="block text-sm font-medium text-gray-700">Name:</label>
-                  <input class="form-input" type="text" id="name-signup" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Name" />
-                </div>
-                <div class="md:col-span-1">
-                  <label for="email-signup" class="mt-2 block text-sm font-medium text-gray-700">E-Mail:</label>
-                  <input class="form-input" type="password" id="email-signup" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="E-Mail"/>
-                </div>
-                  <div class="md:col-span-1">
-                  <label for="password-signup" class="mt-2 block text-sm font-medium text-gray-700">Password:</label>
-                  <input class="form-input" type="password" id="password-signup" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Password"/>
-                </div>
-                <div class="md:col-span-1">
-                  <button type="button" class="mt-5 rounded-md border border-gray-300 bg-white py-2 px-3 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Join</button>
-                </div>
-              </form>
-            </div>
+
+        
+            
+                <form class="signup-form">
+                    <h2>Create An Account?</h2>
+                    <div class="">
+                    <label for="user-signup" class="block text-sm font-medium text-gray-700">Name:</label>
+                    <input class="form-input" type="text" id="name-signup" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Name" />
+                    </div>
+                    <div class="">
+                    <label for="email-signup" class="mt-2 block text-sm font-medium text-gray-700">E-Mail:</label>
+                    <input class="form-input" type="password" id="email-signup" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="E-Mail"/>
+                    </div>
+                    <div class="">
+                    <label for="password-signup" class="mt-2 block text-sm font-medium text-gray-700">Password:</label>
+                    <input class="form-input" type="password" id="password-signup" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Password"/>
+                    </div>
+                    <div class="">
+                    <button type="button" class="mt-5 rounded-md border border-gray-300 bg-white py-2 px-3 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Join</button>
+                    </div>
+                </form>
+        </div>
+      </div>
           <script src="/js/login.js"></script>
