@@ -1,3 +1,19 @@
+async function chartUpdate(e){
+   e.preventDefault();
+   const response = await fetch('/homepage', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json'}
+   })
+   .then(response => res);
+
+   if(response.ok){
+
+   } else {
+      alert('The force is not with you!');
+   }
+}
+
+
 async function createNewEntry(e){
     e.preventDefault();
 
@@ -330,3 +346,4 @@ document.querySelector('#create-entry').addEventListener('click', createNewEntry
 document.querySelector('#all-entries').addEventListener('click', viewAllEntries);
 document.querySelector('#past-week').addEventListener('click', pastWeekEntries);
 document.querySelector('#past-month').addEventListener('click', pastMonthEntries);
+document.querySelector('#tester').addEventListener('click', chartUpdate);

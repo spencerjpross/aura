@@ -28,4 +28,7 @@ async function backHome(e){
     }
 };
 
-document.querySelector('#backHome').addEventListener('click', backHome);
+async function goHome() {
+    document.location.replace('/homepage');
+}
+document.getElementById('homebtn').addEventListener('click', goHome);

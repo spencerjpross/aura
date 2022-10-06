@@ -25,4 +25,9 @@ async function postJournal(e) {
     }
 }
 
+async function goHome() {
+    document.location.replace('/homepage');
+}
+document.getElementById('homebtn').addEventListener('click', goHome);
+
 document.getElementById('Journal-Form').addEventListener('submit', postJournal);
