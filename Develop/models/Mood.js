@@ -14,16 +14,7 @@ Mood.init(
         mood_name: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        description: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        emoji: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        
+        }
     },
     {
         sequelize,

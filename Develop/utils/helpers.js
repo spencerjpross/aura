@@ -16,7 +16,7 @@ module.exports = {
                 ],
                 colors: {
                     excited: "khaki",
-                    happy: "lightgreen",
+                    happy: "pghtgreen",
                     sad: "paleturquoise",
                     angry: "crimson",
                     blah: "slategray",
@@ -25,7 +25,5 @@ module.exports = {
                 }
             }
         });
-    },
-
-
+    }
 }

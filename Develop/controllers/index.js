@@ -1,15 +1,19 @@
 const router = require('express').Router();
-const homeRoutes = require('./homepageRoute');
 const apiRoutes = require('./api')
-const app = express();
-router.use('/', homeRoutes);
-router.use('/api', apiRoutes)
+const homeRoutes = require('./homeRoutes');
+const newEntryRoute = require('./newEntryRoute');
+const pastEntryRoute = require('./pastEntryRoute');
 
+
+// const app = express();
+router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
+router.use('/quiz', newEntryRoute);
+router.use('/entries', pastEntryRoute);
 
 // Default route for any other url's
-app.get("*", (req, res) => {
-    res.send("PAGE NOT FOUND");
-  });
+router.get("*", (req, res) => {
+  res.render('404');
+});
 
-
-  module.exports = router;
+module.exports = router;

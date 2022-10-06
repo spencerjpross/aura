@@ -1,7 +1,9 @@
+
 <nav class="p-5 translate-y-0 bg-white shadow md:flex md:items-center md:justify-between">
+
         <div class="flex justify-between items-center">
             <span class="text-4xl font-[Poppins] cursor-pointer">
-                <img class="h-12 inline " src="./img/aura-yoga-vector-17700032.jpeg">
+                <img class="h-12 inline " src="/img/aura-yoga-vector-17700032.jpeg">
                 Aura
             </span>
 
@@ -29,31 +31,36 @@
 <div class="w-screen h-3/4 flex flex-col justify-center items-center gap-8 font-[calibri]">
     <div class="w-full md:w-3/4 flex flex-col justify-center items-center gap-4">
         <Header class="text-2xl md:text-4xl flex flex-col items-center justify-center">Suggestions:
-            <p id="suggestion"> answer</p>
+            <p id="suggestion">{{ moodSuggestion }}</p>
         </Header>
         <div class="w-screen flex justify-center items-center ">
-            <form class="w-full md:w-3/4 flex flex-col">
+            <form class="w-full md:w-3/4 flex flex-col" id="Journal-Form" name="Journal-Form">
                 <div class="flex flex-row justify-around md:text-3xl">
                     <div class="flex flex-row ">
                         <!-- Topic Input -->
                         <label>Topic:</label>
-                        <input type="text" />
+                        <input type="text" id="journal-topic" />
                     </div>
                     <div class="flex flex-row">
                         <!-- Mood:  -->
                         <label>Mood:</label>
                         <p>Happy</p>
+
                     </div>
                 </div>
                 <div class="flex flex-col justify-center items-center">
                 <label class="font-[calibri] py-4 px-8 text-3xl" for="story" >Journal:</label>
-                <textarea class="w-11/12 md:w-3/4 h-1/2 rounded border-2 border-solid border-gray-300 font-[Poppins]" rows="10" placeholder="Write something about yourself here..."></textarea>
+                <textarea class="w-11/12 md:w-3/4 h-1/2 rounded border-2 border-solid border-gray-300 font-[Poppins]" rows="10" placeholder="Write something about yourself here..." id="journal-notes"></textarea>
                 </div>
                 <br/>
                 <div class="flex justify-center">
-                <button class="w-48 h-12 rounded-xl shadow-lg shadow-gray-400 hover:font-bold font-[Poppins] py-1 px-2 cursor-pointer bg-white rounded">Save entry</button>
+                <button type="submit"  class="w-48 h-12 rounded-xl shadow-lg shadow-gray-400 hover:font-bold font-[Poppins] py-1 px-2 cursor-pointer bg-white rounded">Save entry</button>
                 </div>
             </form>
         </div>
     </div>
 </div> 
+
+
+<script src="/js/newentry.js"></script>
+

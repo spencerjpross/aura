@@ -37,17 +37,14 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/');
+      alert('Account created, Please sign in!');
     } else {
       alert(response.statusText);
     }
   }
 };
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
