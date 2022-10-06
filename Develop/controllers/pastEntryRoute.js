@@ -22,7 +22,8 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/week', async (req, res) => {
-   const journalData = await Journal.findAll({
+     
+        const journalData = await Journal.findAll({
         where: { user_id: req.seesion.user_id },
         limit: 2,
         order: [['date', 'DESC']],

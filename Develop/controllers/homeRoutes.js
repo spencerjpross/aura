@@ -19,8 +19,8 @@ router.get('/homepage', withAuth, async (req, res) => {
     try {
         //Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
-            include: [{ model: Journal }],
-            attributes: { exclude: ['password'] }
+            attributes: { exclude: ['password'] },
+            include: { model: Journal },
         });
         const user = userData.get({ plain: true });
 
