@@ -1,21 +1,104 @@
- <div class="w-screen h-auto flex flex-col justify-center items-center gap-16">
-    <h1 class="text-6xl">{{user.name}}</h1>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="create-entry">Create Entry</button>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="all-entries">View All Entries</button>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="past-week">Past Week</button>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="past-month">Past Month</button>
-    <button class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="logout">Log Out</button>
- </div>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<link href="https://pagecdn.io/lib/billboardjs/3.5.1/billboard.css" rel="stylesheet" crossorigin="anonymous"  >
+<script src="https://pagecdn.io/lib/billboardjs/3.5.1/billboard.js" crossorigin="anonymous"  ></script>
 
-{{!-- {{#each users as |user| }}
-<div class="block text-sm font-medium text-gray-700">
-  <div class="text-lg font-medium leading-6 text-gray-900">
-    <h2 class="text-red-400">{{user.name}}</h2>
-  </div>
-  <div>
-    
-  </div>
-</div>
-{{/each}} --}}
-<script src="/js/homepage.js"></script>
-<script src="/js/logout.js"></script>
+<nav class="p-5 translate-y-0 bg-white shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+            <span class="text-4xl font-[Poppins] cursor-pointer">
+                <img class="h-12 inline " src="./img/aura-yoga-vector-17700032.jpeg">
+                Aura
+            </span>
+            <span class="text-3-x1 cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+    <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4
+    md:pl-0 pl-5 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-4 my-6 md:my-0">
+            <a href="" id="logout" class="text-xl hover:font-bold hover:text-indigo-600 duration-500"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </li>
+    </ul>
+</nav>
+
+<content class="flex flex-wrap h-full block space-y-12 justify-center md:space-y-0 md:justify-start">
+
+    <aside class="min-w-max ml-8 flex-grow order-first">       
+        <div class="px-8 flex h-full flex-col bg-gray-100 bg-opacity-30 border-2 border-black items-center text-center space-y-16">
+             
+            <div id="user-pic" class="w-40 border-4 border-black mt-8">
+            <img src="/img/icon.png" alt="Profile Picture">
+            </div>
+
+            <div id="items" class="text-3xl space-y-12 flex-col flex">
+
+                {{!-- displays username in side bar --}}
+                <div>
+                    <p>{{user.name}}</p>
+                </div>
+                  
+                {{!-- Sidebar buttons --}}
+                <div>
+                    <button id="create-entry" class="p-2 border border-black hover:bg-gray-50"><i class='fa fa-plus mr-2'></i>New Entry</button>
+                </div>
+
+                <div>
+                    <button id="all-entries" class="p-2 border border-black hover:bg-gray-50"><i class="fa fa-archive mr-2" aria-hidden="true"></i>Past Entries</button>
+                </div>
+
+                <div>
+                    <button id="past-month" class="p-2 border border-black hover:bg-gray-50"><i class='fa fa-book mr-2'></i>Past Month</button>
+                </div>
+
+                <div>
+                    <button id="past-week" class="p-2 border border-black hover:bg-gray-50"><i class="fa fa-file-text mr-2" aria-hidden="true"></i>Past Week</button>
+                </div>
+
+            </div>
+        </div>
+    </aside>
+
+    {{!-- empty div created to place the pie chart in --}}
+    <section id="chart-container" class="flex-grow flex flex-col items-center justify-center order-last md:order-2">
+        <div id="chart"></div>
+    </section>
+
+    {{!-- box to place the user's last journal entry in --}}
+    <section id="box-container" class="flex h-full flex-grow flex-col space-y-20 mr-8 justify-center items-center order-3">
+        <div class="border border-black h-56 w-56 space-y-12 bg-gray-100 bg-opacity-30 text-center">
+            <h1 class="text-2xl mt-4">Your last journal entry</h1>
+            <p class="text-xl">{{user.journals.[2].topic}}</p>
+        </div>
+
+        {{!-- box created to hold the generated mood calendar --}}
+        <div class="h-56 w-56 space-y-2 border-r-2 border-l-2 border-t-2 border-black bg-gray-100 bg-opacity-30">
+            <h2 class="mt-2">Monthly Mood Calendar</h2>
+
+            {{!-- calendar labels --}}
+            <div id="weekdays" class="flex text-xs justify-between">
+                <div class="mx-0.5">Sun</div>
+                <div class="mx-0.5">Mon</div>
+                <div class="mx-0.5">Tue</div>
+                <div class="mx-0.5">Wed</div>
+                <div class="mx-0.5">Thu</div>
+                <div class="mx-0.5">Fri</div>
+                <div class="mx-2">Sat</div>
+            </div>
+            <div id="calendar" class="grid grid-cols-7 h-40 grid-rows-5 border-b-2 border-t border-black"></div>
+        </div>
+
+        {{!-- badge box to present the user their most recent badge and also click to
+              see their total badges (not implemented) --}}
+        <button id="badge-button">
+        <div class="flex flex-col border border-black h-56 w-56 items-center hover:opacity-80 bg-gray-100 bg-opacity-30">
+            <h3 class="text-2xl mt-4">Badges</h3>
+            <p class="mt-2">Your most recent badge is..</p>
+            <img class="h-24 w-24" src="/img/badge-example.png" alt="Recent Example Badge">
+            <p>for logging 7 days of consecutive entries</p>
+        </div>
+    </button>
+    </section>
+
+</content>
+
+<script src="./js/homepage.js"></script>
