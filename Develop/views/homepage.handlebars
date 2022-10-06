@@ -3,16 +3,34 @@
 <link href="https://pagecdn.io/lib/billboardjs/3.5.1/billboard.css" rel="stylesheet" crossorigin="anonymous"  >
 <script src="https://pagecdn.io/lib/billboardjs/3.5.1/billboard.js" crossorigin="anonymous"  ></script>
 
-<content class="flex flex-wrap h-full">
+<nav class="p-5 translate-y-0 bg-white shadow md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+            <span class="text-4xl font-[Poppins] cursor-pointer">
+                <img class="h-12 inline " src="./img/aura-yoga-vector-17700032.jpeg">
+                Aura
+            </span>
+            <span class="text-3-x1 cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+    <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4
+    md:pl-0 pl-5 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-4 my-6 md:my-0">
+            <a href="" id="logout" class="text-xl hover:font-bold hover:text-indigo-600 duration-500"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </li>
+    </ul>
+</nav>
 
-    <aside class="min-w-max ml-8 flex-grow">       
-        <div class="px-8 flex h-full flex-col bg-gray-100 bg-opacity-50 border-2 border-black items-center space-y-14">
+<content class="flex flex-wrap h-full block">
+
+    <aside class="min-w-max ml-8">       
+        <div class="px-8 flex h-full flex-col bg-gray-100 bg-opacity-30 border-2 border-black items-center text-center space-y-16">
              
             <div id="user-pic" class="w-40 border-4 border-black mt-8">
             <img src="/imgs/icon.png" alt="Profile Picture">
             </div>
 
-            <div id="items" class="text-4xl space-y-24">
+            <div id="items" class="text-3xl space-y-12 flex-col flex">
 
                 {{!-- displays username in side bar --}}
                 <div>
@@ -20,35 +38,40 @@
                 </div>
                   
                 {{!-- Sidebar buttons --}}
-                <div id="new-entry">
-                    <button class="p-2 border border-black hover:bg-gray-50"><i class='fa fa-plus mr-2'></i>New Entry</button>
+                <div>
+                    <button id="create-entry" class="p-2 border border-black hover:bg-gray-50"><i class='fa fa-plus mr-2'></i>New Entry</button>
                 </div>
 
-                <div id="past-entries">
-                    <button class="p-2 border border-black hover:bg-gray-50"><i class='fa fa-book mr-2'></i>Past Entries</button>
+                <div>
+                    <button id="all-entries" class="p-2 border border-black hover:bg-gray-50"><i class="fa fa-archive mr-2" aria-hidden="true"></i>Past Entries</button>
                 </div>
 
-                <div id="user-settings">
-                    <button class="p-2 border border-black mx-8 hover:bg-gray-50"><i class='fa fa-gear mr-2'></i>User Settings</button>
+                <div>
+                    <button id="past-month" class="p-2 border border-black hover:bg-gray-50"><i class='fa fa-book mr-2'></i>Past Month</button>
                 </div>
+
+                <div>
+                    <button id="past-week" class="p-2 border border-black hover:bg-gray-50"><i class="fa fa-file-text mr-2" aria-hidden="true"></i>Past Week</button>
+                </div>
+
             </div>
         </div>
     </aside>
 
     {{!-- empty div created to place the pie chart in --}}
     <section id="chart-container" class="flex-grow flex flex-col items-center justify-center">
-        <div id="chart" onload="chartGenerate({{journal}})"></div>
+        <div id="chart"></div>
     </section>
 
     {{!-- box to place the user's last journal entry in --}}
-    <section id="box-container" class="flex h-full flex-grow flex-col space-y-20 mr-8 items-center">
-        <div class="border border-black h-56 w-56 space-y-12 bg-gray-100 bg-opacity-50">
+    <section id="box-container" class="flex h-full flex-grow flex-col space-y-20 mr-8 justify-center items-center">
+        <div class="border border-black h-56 w-56 space-y-12 bg-gray-100 bg-opacity-30">
             <h1 class="text-2xl mt-4">Your last journal entry</h1>
-            <p class="text-xl">{{user.journal.[journal.length].topic}}</p>
+            <p class="text-xl">{{user.journals.[journals.length].topic}}</p>
         </div>
 
         {{!-- box created to hold the generated mood calendar --}}
-        <div class="h-56 w-56 space-y-2 border-r-2 border-l-2 border-t-2 border-black bg-gray-100 bg-opacity-50">
+        <div class="h-56 w-56 space-y-2 border-r-2 border-l-2 border-t-2 border-black bg-gray-100 bg-opacity-30">
             <h2 class="mt-2">Monthly Mood Calendar</h2>
 
             {{!-- calendar labels --}}
@@ -67,7 +90,7 @@
         {{!-- badge box to present the user their most recent badge and also click to
               see their total badges (not implemented) --}}
         <button id="badge-button">
-        <div class="flex flex-col border border-black h-56 w-56 items-center hover:opacity-80 bg-gray-100 bg-opacity-50">
+        <div class="flex flex-col border border-black h-56 w-56 items-center hover:opacity-80 bg-gray-100 bg-opacity-30">
             <h3 class="text-2xl mt-4">Badges</h3>
             <p class="mt-2">Your most recent badge is..</p>
             <img class="h-24 w-24" src="/imgs/badge-example.png" alt="Recent Example Badge">
@@ -79,6 +102,3 @@
 </content>
 
 <script src="./js/helpers.js"></script>
-{{!-- calls the helper functions to generate the pie chart and mood calendar --}}
-{{!-- {{{ user.journal}}}
-{{{gen_calendar user.journal}}}  --}}
