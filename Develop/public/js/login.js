@@ -16,7 +16,6 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       document.location.replace('/homepage');
-
     } else {
       alert(response.statusText);
     }
@@ -38,15 +37,14 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/');
+      alert('Account created, Please sign in!');
     } else {
       alert(response.statusText);
     }
   }
 };
 
-  const loginBtn = document.querySelector('.login-form');
-  loginBtn.addEventListener('click', loginFormHandler);
 
-  const signUpBtn = document.querySelector('.signup-form');
-  signUpBtn.addEventListener('click', signupFormHandler);
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
