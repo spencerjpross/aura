@@ -2,7 +2,7 @@ const router = require('express').Router();
 const apiRoutes = require('./api')
 const homeRoutes = require('./homeRoutes');
 const newEntryRoute = require('./newEntryRoute');
-const pastEntryRoute = require('./pastEntryRoute');
+// const pastEntryRoute = require('./pastEntryRoute');
 
 
 // const app = express();

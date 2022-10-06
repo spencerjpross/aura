@@ -5,18 +5,11 @@ const logout = async () => {
     });
   
     if (response.ok) {
-<<<<<<< HEAD
       document.location.replace('/');
-=======
-      document.location.replace('/login');
->>>>>>> dev
     } else {
       alert(response.statusText);
     }
   };
   
   document.querySelector('#logout').addEventListener('click', logout);
-<<<<<<< HEAD
-=======
   
->>>>>>> dev
