@@ -3,13 +3,13 @@ async function createNewEntry(e){
 
     const response = await fetch(`/`, {
         method: 'GET',
-
     })
+
      if (response.ok) {
         document.location.replace('/quiz');
      } else {
         alert('something went wrong!')
-     }
+     }     
 };
 
 async function viewAllEntries(e){
@@ -24,7 +24,6 @@ async function viewAllEntries(e){
       alert('something went wrong!');
    }
 }
-
 
 async function pastWeekEntries(e){
    e.preventDefault();
