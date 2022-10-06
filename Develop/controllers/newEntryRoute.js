@@ -36,5 +36,4 @@ router.get('/:id', async (req, res) => {
     console.log(sugg.mood_name);
 });
 
-
 module.exports = router;

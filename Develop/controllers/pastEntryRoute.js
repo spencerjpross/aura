@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const { Journal,Mood, User } = require('../models');
-const { UserContextMenuCommandInteraction } = require('discord.js');
+
 
 router.get('/', async (req, res) => {
         const journalData = await Journal.findAll({
@@ -18,14 +18,14 @@ router.get('/', async (req, res) => {
             journals
         })
 
-        console.log(req.session.logged_in);
+        console.log(journals);
 })
 
 router.get('/week', async (req, res) => {
    const journalData = await Journal.findAll({
         where: { user_id: req.seesion.user_id },
-        limit: 7,
-        order: [['date', 'DESC'],]
+        limit: 2,
+        order: [['date', 'DESC']],
    })
 
    const journals = journalData.map((journal) => journal.get({ plain: true }));
@@ -39,7 +39,7 @@ router.get('/month', async (req, res) => {
     const journalData = await Journal.findAll({
          where: { user_id: req.seesion.user_id },
          limit: 30,
-         order: [['date', 'DESC'],]
+         order: [['date', 'DESC']],
     })
  
     const journals = journalData.map((journal) => journal.get({ plain: true }));
