@@ -180,8 +180,8 @@ This was accomplished by those listed below:
 [issues-url]: https://github.com/spencerjpross/aura/issues
 [license-shield]: https://img.shields.io/github/license/spencerjpross/aura.svg?style=for-the-badge
 [license-url]: https://github.com/spencerjpross/aura/blob/master/LICENSE.txt
-[project-screenshot-1]: ./Develop/public/img/screenshot-1.png
-[project-screenshot-2]: ./Develop/public/img/screenshot-2.png
-[project-screenshot-3]: ./Develop/public/img/screenshot-3.png
-[project-screenshot-4]: ./Develop/public/img/screenshot-4.png
-[project-screenshot-5]: ./Develop/public/img/screenshot-5.png
+[project-screenshot-1]: ./public/img/screenshot-1.png
+[project-screenshot-2]: ./public/img/screenshot-2.png
+[project-screenshot-3]: ./public/img/screenshot-3.png
+[project-screenshot-4]: ./public/img/screenshot-4.png
+[project-screenshot-5]: ./public/img/screenshot-5.png
