@@ -1,0 +1,142 @@
+[
+    {
+        "mood_id": 1,
+        "title": "Go out with friends and have a good time."
+    },
+    {
+        "mood_id": 1,
+        "title": "Throw a party with friends and family."
+    },
+    {
+        "mood_id": 1,
+        "title": "Go for a swim at the beach."
+    },
+    {
+        "mood_id": 1,
+        "title": "Go try snorkeling or diving."
+    },
+    {
+        "mood_id": 1,
+        "title": "Happiness depends upon ourselves - Aristotle"
+    },
+    {
+        "mood_id": 2,
+        "title": "Happiness is not something ready-made. It comes from your own actions - Dalai Lama"
+    },
+    {
+        "mood_id": 2,
+        "title": "If you want happiness for an hour-take a nap. If you want happiness for a day-go fishing. If you want happiness for a year-inherit a fortune. If you want happiness for a lifetime-help someone else. - Chinese Proverb"
+    },
+    {
+        "mood_id": 2,
+        "title": "Get with some friends and play a couple of board games."
+    },
+    {
+        "mood_id": 2,
+        "title": "Volunteer at community center."
+    },
+    {
+        "mood_id": 2,
+        "title": "Have a dog or cat spend some time with them as this will boost your mood even more."
+    },
+    {
+        "mood_id": 3,
+        "title": "Take up on learning to draw."
+    },
+    {
+        "mood_id": 3,
+        "title": "Maybe your house or office space needs a cleaning give it a nice tidy up."
+    },
+    {
+        "mood_id": 3,
+        "title": "Why not just stand up for a good stretch to relax the body."
+    },
+    {
+        "mood_id": 3,
+        "title": "Try your hand a sudoku puzzle."
+    },
+    {
+        "mood_id": 3,
+        "title": "Grab a pencil or fidget spinner to entertain your hands which require your mind to concentrate."
+    },
+    {
+        "mood_id": 4,
+        "title": "Try eating something out of the ordinary something exotic that way it pvens up your taste buds."
+    },
+    {
+        "mood_id": 4,
+        "title": "A nice hot shower or bath might be what is needed at the moment to relax the body."
+    },
+    {
+        "mood_id": 4,
+        "title": "Take a few moments and read a book. Books are known for brighting peoples mood."
+    },
+    {
+        "mood_id": 4,
+        "title": "Go and give an act of kindness to someone else, by seeing a smile on their face could make one on yours."
+    },
+    {
+        "mood_id": 4,
+        "title": "Motivate yourself to complete at least one item on your list of things to do for that day."
+    },
+    {
+        "mood_id": 5,
+        "title": "Create some Artwork"
+    },
+    {
+        "mood_id": 5,
+        "title": "listen to Beautiful Music"
+    },
+    {
+        "mood_id": 5,
+        "title": "Dance to your Favorite Songs"
+    },
+    {
+        "mood_id": 5,
+        "title": "Do not dwell on the negative item, think of a way to make it positive."
+    },
+    {
+        "mood_id": 5,
+        "title": "Go out and try something new you have always wanted to try."
+    },
+    {
+        "mood_id": 6,
+        "title": "Play a game one that can really get your attention."
+    },
+    {
+        "mood_id": 6,
+        "title": "Take a watermelon see if you can squeeze it open with any part of your body."
+    },
+    {
+        "mood_id": 6,
+        "title": "Go watch a movie to take the mind of the object of your fustration."
+    },
+    {
+        "mood_id": 6,
+        "title": "Take a break from whatever you working on. Move on to another activity and come back later."
+    },
+    {
+        "mood_id": 6,
+        "title": "Try to meditate to clam the mind."
+    },
+    {
+        "mood_id": 7,
+        "title": "Never punch a wall or door, instead if a punching bag is near get in some cardio by practicing or use a mirror and shadow box."
+    },
+    {
+        "mood_id": 7,
+        "title": "Do not go for a ride, instead take a run to clear the emotions."
+    },
+    {
+        "mood_id": 7,
+        "title": "If needed just yell to the top of your lungs in your home or outside.  A good shout every now and then really helps in some cases."
+    },
+    {
+        "mood_id": 7,
+        "title": "Write out the anger in the journal to vent "
+    },
+    {
+        "mood_id": 7,
+        "title": "Go to the gym and take angry out on weight or threadmill"
+    }
+]
